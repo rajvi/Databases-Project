@@ -23,6 +23,7 @@ public class Main {
         SelectHelper helper = new SelectHelper();
         get("/", (req, res) -> {
             ResultSet r = helper.select("SELECT distinct RESTAURANT FROM TripAdvisorData");
+
             ArrayList<String> arr  = new ArrayList<String>();
             while(r.next()){
                 arr.add(r.getString("RESTAURANT"));
@@ -40,7 +41,21 @@ public class Main {
 
         post("/student",(request, response) -> {
             String user = request.queryParams("username") ;
+            System.out.println(user);
             HashMap<String,Object> model = new HashMap<String, Object>();
+            String query = "SELECT RESTAURANT,SCORE FROM TripAdvisorData WHERE RESTAURANT = " + "'" +user + "'";
+            System.out.println(query);
+            ResultSet rs = helper.select(query);
+            String name = "";
+            float gpa = 0;
+
+            while (rs.next()){
+                name = rs.getString("RESTAURANT");
+                gpa = rs.getFloat("SCORE");
+
+            }
+            model.put("name", name);
+            model.put("gpa", gpa);
             return render(model,"/public/student.html");
 
         });
