@@ -22,16 +22,16 @@ public class Main {
     public static void main(String[] args) {
         SelectHelper helper = new SelectHelper();
         get("/", (req, res) -> {
-            ResultSet r = helper.select("SELECT distinct RESTAURANT FROM TripAdvisorData");
-
-            ArrayList<String> arr  = new ArrayList<String>();
-            while(r.next()){
-                arr.add(r.getString("RESTAURANT"));
-            }
-
-            HashMap<String,Object> model = new HashMap<String, Object>();
-            model.put("data",arr);
-            model.put("test","This is some random string");
+//            ResultSet r = helper.select("SELECT distinct RESTAURANT FROM TripAdvisorData");
+//
+//            ArrayList<String> arr  = new ArrayList<String>();
+//            while(r.next()){
+//                arr.add(r.getString("RESTAURANT"));
+//            }
+//
+          HashMap<String,Object> model = new HashMap<String, Object>();
+//            model.put("data",arr);
+//            model.put("test","This is some random string");
             return render(model,"/public/index.html");
         }
 
@@ -39,10 +39,11 @@ public class Main {
         );
 
 
-        post("/student",(request, response) -> {
+        post("/drinker",(request, response) -> {
             String user = request.queryParams("username") ;
             System.out.println(user);
             HashMap<String,Object> model = new HashMap<String, Object>();
+
             String query = "SELECT RESTAURANT,SCORE FROM TripAdvisorData WHERE RESTAURANT = " + "'" +user + "'";
             System.out.println(query);
             ResultSet rs = helper.select(query);
@@ -56,13 +57,13 @@ public class Main {
             }
             model.put("name", name);
             model.put("gpa", gpa);
-            return render(model,"/public/student.html");
+            return render(model,"/public/drinker.html");
 
         });
 
-        post("/company",(request, response) -> {
+        post("/bar",(request, response) -> {
             HashMap<String,Object> model = new HashMap<String, Object>();
-            return render(model,"/public/company.html");
+            return render(model,"/public/bar.html");
 
         });
 

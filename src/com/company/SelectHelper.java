@@ -14,11 +14,16 @@ public class SelectHelper {
      */
     private Connection connect() {
         // SQLite connection string
-        String url = "jdbc:sqlite:/Users/Rajvi/Documents/Rutgers/cs336/Trip Advisor.db";
+
+        String url = "jdbc:mysql://databases336proj.cm1qosinmxff.us-east-2.rds.amazonaws.com/barbeerdrinker?user=rajvi&password=asdfpoiu";
         Connection conn = null;
         try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(url);
-        } catch (SQLException e) {
+
+
+        } catch (Exception e) {
+            System.out.println("EXEPCTION");
             System.out.println(e.getMessage());
         }
         return conn;
