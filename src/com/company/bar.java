@@ -8,7 +8,7 @@ public class Bar {
     int rating, floors;
     char inspection;
 
-    public Bar(String name, String address) {
+    public Bar(String name, String rating) {
         this.name = name;
         this.address = address;
     }

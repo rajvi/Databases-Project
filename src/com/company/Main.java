@@ -64,28 +64,40 @@ public class Main {
 
 
         post("/drinker",(request, response) -> {
-            String user = request.queryParams("username") ;
+            String user = request.queryParams("username");
             System.out.println(user);
             HashMap<String,Object> model = new HashMap<String, Object>();
 
-            String query = "SELECT `First Name`, Age, Major FROM drinkers WHERE drinkers.ID = " + "'" + user + "'";
+            String query = "SELECT `First Name`, Age, Major, `Original GPA`, `Current GPA` FROM drinkers WHERE drinkers.ID = " + "'" + user + "'";
             System.out.println(query);
             ResultSet rs = helper.select(query);
             String name = "";
             int age = 0;
             String major = "";
+            int gpa_difference = 0;
 
             while (rs.next()){
                 name = rs.getString("First Name");
                 age = rs.getInt("Age");
                 major = rs.getString("Major");
+                gpa_difference = rs.getInt("Current GPA") - rs.getInt("Original GPA");
 
             }
             model.put("name", name);
             model.put("age", age);
             model.put("major", major);
-            return render(model,"/public/drinker.html");
+            model.put("gpa_difference", gpa_difference);
 
+            //String id = request.queryParams("username");
+            String frequented_bars = "SELECT `bar name` FROM frequents WHERE `drinker id`= " + "'" + user + "'";
+            ResultSet rs2 = helper.select(frequented_bars);
+            ArrayList<String> bars = new ArrayList<String>();
+            while(rs2.next()) {
+                bars.add(rs2.getString("bar name"));
+            }
+            model.put("bars", bars);
+
+            return render(model,"/public/drinker.html");
         });
 
         post("/create_account",(request, response) -> {
