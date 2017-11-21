@@ -88,6 +88,12 @@ public class Main {
 
         });
 
+        post("/create_account",(request, response) -> {
+            HashMap<String,Object> model = new HashMap<String, Object>();
+            return render(model,"/public/create_account.html");
+
+        });
+
         post("/bar",(request, response) -> {
             HashMap<String,Object> model = new HashMap<String, Object>();
             return render(model,"/public/bar.html");
