@@ -44,19 +44,22 @@ public class Main {
             System.out.println(user);
             HashMap<String,Object> model = new HashMap<String, Object>();
 
-            String query = "SELECT RESTAURANT,SCORE FROM TripAdvisorData WHERE RESTAURANT = " + "'" +user + "'";
+            String query = "SELECT `First Name`, Age, Major FROM drinkers WHERE drinkers.ID = " + "'" + user + "'";
             System.out.println(query);
             ResultSet rs = helper.select(query);
             String name = "";
-            float gpa = 0;
+            int age = 0;
+            String major = "";
 
             while (rs.next()){
-                name = rs.getString("RESTAURANT");
-                gpa = rs.getFloat("SCORE");
+                name = rs.getString("First Name");
+                age = rs.getInt("Age");
+                major = rs.getString("Major");
 
             }
             model.put("name", name);
-            model.put("gpa", gpa);
+            model.put("age", age);
+            model.put("major", major);
             return render(model,"/public/drinker.html");
 
         });
