@@ -38,6 +38,29 @@ public class Main {
 
         );
 
+        post("/locatebar", (request, response) -> {
+            String city = request.queryParams("location");
+            System.out.println(city);
+            HashMap<String, Object> model = new HashMap<String, Object>();
+
+//            String find_good_bars = "SELECT Name,`Full Address` as addr FROM bars WHERE City = " + "'" + city + "'";
+            String find_good_bars = "SELECT DISTINCT f.`bar name` as Name, b.Rating FROM frequents f " +
+                    "INNER JOIN drinkers d on d.ID = f.`drinker id` AND (d.`Current GPA` - d.`Original GPA`)>0 " +
+                    "AND d.`Returned Safely?` = 'YES' AND (d.`Amount of Friends Left With` - d.`Amount of Friends Entered With`)>=0 " +
+                    "INNER JOIN bars b on f.`bar name` = b.name AND b.city = " + "'" + city + "'" + "order by b.Rating desc";
+            System.out.println(find_good_bars);
+            ResultSet rs = helper.select(find_good_bars);
+            String name = "";
+            ArrayList<Bar> arr = new ArrayList<Bar>();
+            while(rs.next()) {
+                arr.add(new Bar(rs.getString("Name"), rs.getString("Rating")));
+            }
+            model.put("city",arr);
+
+            return render(model,"/public/locatebar.html");
+
+        });
+
 
         post("/drinker",(request, response) -> {
             String user = request.queryParams("username") ;
