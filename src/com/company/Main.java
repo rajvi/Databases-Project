@@ -45,9 +45,10 @@ public class Main {
 
 //            String find_good_bars = "SELECT Name,`Full Address` as addr FROM bars WHERE City = " + "'" + city + "'";
             String find_good_bars = "SELECT DISTINCT f.`bar name` as Name, b.Rating FROM frequents f " +
-                    "INNER JOIN drinkers d on d.ID = f.`drinker id` AND (d.`Current GPA` - d.`Original GPA`)>0 " +
+                    "INNER JOIN drinkers d on d.ID = f.`drinker id` AND (d.`Current GPA` - d.`Original GPA`)>=0 " +
                     "AND d.`Returned Safely?` = 'YES' AND (d.`Amount of Friends Left With` - d.`Amount of Friends Entered With`)>=0 " +
-                    "INNER JOIN bars b on f.`bar name` = b.name AND b.city = " + "'" + city + "'" + "order by b.Rating desc";
+                    "INNER JOIN bars b on f.`bar name` = b.name AND b.city = " + "'" + city + "'" + "AND b.Rating>=4 " +
+                    "order by b.Rating desc";
             System.out.println(find_good_bars);
             ResultSet rs = helper.select(find_good_bars);
             String name = "";
