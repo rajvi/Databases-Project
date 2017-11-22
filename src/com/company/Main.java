@@ -2,6 +2,7 @@ package com.company;
 
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
+import sun.plugin2.os.windows.FLASHWINFO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -68,7 +69,8 @@ public class Main {
             System.out.println(user);
             HashMap<String,Object> model = new HashMap<String, Object>();
 
-            String query = "SELECT ID, `First Name`, Age, Major, `Original GPA`, `Current GPA`, Crimes, `Returned Safely?` FROM drinkers WHERE drinkers.ID = " + "'" + user + "'";
+            String query = "SELECT ID, `First Name`, Age, Major, `Original GPA`, `Current GPA`, Crimes, " +
+                    "`Returned Safely?` FROM drinkers WHERE drinkers.ID = " + "'" + user + "'";
             System.out.println(query);
             ResultSet rs = helper.select(query);
             String name = "";
@@ -78,7 +80,6 @@ public class Main {
             int id = 0;
             int crimes = 0;
             String returned = "";
-
 
             while (rs.next()){
                 name = rs.getString("First Name");
@@ -126,6 +127,41 @@ public class Main {
         post("/create_account",(request, response) -> {
             HashMap<String,Object> model = new HashMap<String, Object>();
             return render(model,"/public/create_account.html");
+
+        });
+
+        post("/create_account_success",(request, response) -> {
+
+            HashMap<String,Object> model = new HashMap<String, Object>();
+            String first_name = request.queryParams("first_name");
+            String last_name = request.queryParams("last_name");
+            String phone = request.queryParams("phone");
+            String gender = request.queryParams("gender");
+
+            String age = request.queryParams("age");
+            String major = request.queryParams("major");
+            String original_gpa = request.queryParams("original_gpa");
+            String current_gpa = request.queryParams("current_gpa");
+            String relationship = request.queryParams("relationship");
+            String crimes = request.queryParams("crimes");
+            String tattoos = request.queryParams("tattoos");
+            String friends_entered = request.queryParams("friends_entered");
+            String duration = request.queryParams("duration");
+            String time_entered = request.queryParams("time_entered");
+            String bac = request.queryParams("bac");
+            String friends_left = request.queryParams("friends_left");
+
+
+            String returned = request.queryParams("returned");
+
+
+            helper.insert(first_name, last_name, phone, gender, age, major, original_gpa, current_gpa, relationship,
+            crimes, tattoos, friends_entered, duration, time_entered, bac, friends_left, returned);
+
+            response.redirect("/");
+
+            return "";
+
 
         });
 
