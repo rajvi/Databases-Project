@@ -54,7 +54,7 @@ public class Main {
             String name = "";
             ArrayList<Bar> arr = new ArrayList<Bar>();
             while(rs.next()) {
-                arr.add(new Bar(rs.getString("Name"), rs.getString("Rating")));
+                arr.add(new Bar(rs.getString("Name"), rs.getInt("Rating")));
             }
             model.put("city",arr);
 
@@ -68,25 +68,48 @@ public class Main {
             System.out.println(user);
             HashMap<String,Object> model = new HashMap<String, Object>();
 
-            String query = "SELECT `First Name`, Age, Major, `Original GPA`, `Current GPA` FROM drinkers WHERE drinkers.ID = " + "'" + user + "'";
+            String query = "SELECT ID, `First Name`, Age, Major, `Original GPA`, `Current GPA`, Crimes, `Returned Safely?` FROM drinkers WHERE drinkers.ID = " + "'" + user + "'";
             System.out.println(query);
             ResultSet rs = helper.select(query);
             String name = "";
             int age = 0;
             String major = "";
             int gpa_difference = 0;
+            int id = 0;
+            int crimes = 0;
+            String returned = "";
+
 
             while (rs.next()){
                 name = rs.getString("First Name");
                 age = rs.getInt("Age");
                 major = rs.getString("Major");
                 gpa_difference = rs.getInt("Current GPA") - rs.getInt("Original GPA");
-
+                id = rs.getInt("ID");
+                crimes = rs.getInt("Crimes");
+                returned = rs.getString("Returned Safely?");
             }
+
+            String message;
+            if((gpa_difference >= 0.5 && returned == "NO") || (crimes > 3 && returned == "NO"))
+                message = "Extreme Danger";
+            else if(gpa_difference >= 0.5 || crimes > 0)
+                message = "Danger";
+            else if(gpa_difference > 0.4 || returned == "NO" || crimes > 0)
+                message = "Possibility of Danger";
+            else if((gpa_difference>0 && gpa_difference<=0.2) && returned == "YES" && crimes == 0)
+                message = "You are stable";
+            else if(gpa_difference<=0 && returned == "YES" && crimes == 0)
+                message = "Keep it up!";
+            else
+                message = "Ok";
+
             model.put("name", name);
             model.put("age", age);
             model.put("major", major);
             model.put("gpa_difference", gpa_difference);
+            model.put("id", id);
+            model.put("status", message);
 
             //String id = request.queryParams("username");
             String frequented_bars = "SELECT `bar name` FROM frequents WHERE `drinker id`= " + "'" + user + "'";

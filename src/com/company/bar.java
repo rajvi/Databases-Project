@@ -8,9 +8,9 @@ public class Bar {
     int rating, floors;
     char inspection;
 
-    public Bar(String name, String rating) {
+    public Bar(String name, int rating) {
         this.name = name;
-        this.address = address;
+        this.rating = rating;
     }
 
     public String getName() {
