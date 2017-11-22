@@ -9,9 +9,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/com/company/Main.java" line="52" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62f6ba68-1410-4d8d-9319-c351e6ca6899" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/public/create_account.html" afterPath="$PROJECT_DIR$/src/public/create_account.html" />
-    </list>
+    <list default="true" id="62f6ba68-1410-4d8d-9319-c351e6ca6899" name="Default" comment="" />
     <ignored path="Databases-Project.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
