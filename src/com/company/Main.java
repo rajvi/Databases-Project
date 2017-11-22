@@ -20,6 +20,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        port(80);
         SelectHelper helper = new SelectHelper();
         get("/", (req, res) -> {
 //            ResultSet r = helper.select("SELECT distinct RESTAURANT FROM TripAdvisorData");
