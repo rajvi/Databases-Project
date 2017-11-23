@@ -21,7 +21,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        port(80);
+        //port(80);
         SelectHelper helper = new SelectHelper();
         get("/", (req, res) -> {
 //            ResultSet r = helper.select("SELECT distinct RESTAURANT FROM TripAdvisorData");
@@ -86,22 +86,22 @@ public class Main {
                 name = rs.getString("First Name");
                 age = rs.getInt("Age");
                 major = rs.getString("Major");
-                gpa_difference = rs.getInt("Current GPA") - rs.getInt("Original GPA");
+                gpa_difference =  rs.getInt("Current GPA") - rs.getInt("Original GPA");
                 id = rs.getInt("ID");
                 crimes = rs.getInt("Crimes");
                 returned = rs.getString("Returned Safely?");
             }
 
             String message;
-            if((gpa_difference >= 0.5 && returned == "NO") || (crimes > 3 && returned == "NO"))
+            if((gpa_difference <= 0.5 && returned == "NO") || (crimes > 3 && returned == "NO"))
                 message = "Extreme Danger";
-            else if(gpa_difference >= 0.5 || crimes > 0)
+            else if(gpa_difference <= 0.5 || crimes > 0)
                 message = "Danger";
-            else if(gpa_difference > 0.4 || returned == "NO" || crimes > 0)
+            else if(gpa_difference < 0.4 || returned == "NO" || crimes > 0)
                 message = "Possibility of Danger";
-            else if((gpa_difference>0 && gpa_difference<=0.2) && returned == "YES" && crimes == 0)
+            else if((gpa_difference > 0 && gpa_difference<=0.2) && returned == "YES" && crimes == 0)
                 message = "You are stable";
-            else if(gpa_difference<=0 && returned == "YES" && crimes == 0)
+            else if(gpa_difference >= 0 && returned == "YES" && crimes == 0)
                 message = "Keep it up!";
             else
                 message = "Ok";
@@ -159,18 +159,36 @@ public class Main {
             helper.insert(first_name, last_name, phone, gender, age, major, original_gpa, current_gpa, relationship,
             crimes, tattoos, friends_entered, duration, time_entered, bac, friends_left, returned);
 
-            response.redirect("/");
-
-            return "";
-
+            String account_id = "SELECT ID FROM drinkers WHERE `First Name`= " + "'" + first_name + "'" + " AND `Last Name` =  " + "'" + last_name + "'";
+            ResultSet rs_id = helper.select(account_id);
+            String id = "";
+            while(rs_id.next()) {
+               id = rs_id.getString("ID");
+            }
+            model.put("id", id);
+            //response.redirect("/account_username");
+            //response.redirect("/");
+            //return "";
+            return render(model,"/public/account_username.html");
 
         });
 
-        post("/bar",(request, response) -> {
+//        post("/analytics",(request, response) -> {
+//            HashMap<String,Object> model = new HashMap<String, Object>();
+//            return render(model,"/public/analytics.html");
+//
+//        });
+
+        get("/analytics", (req, res) -> {
             HashMap<String,Object> model = new HashMap<String, Object>();
-            return render(model,"/public/bar.html");
-
+            return render(model,"/public/analytics.html");
         });
+
+//        post("/bar",(request, response) -> {
+//            HashMap<String,Object> model = new HashMap<String, Object>();
+//            return render(model,"/public/bar.html");
+//
+//        });
 
     }
     public static String render(Map<String, Object> model, String templatePath) {

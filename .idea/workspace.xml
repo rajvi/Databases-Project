@@ -9,7 +9,16 @@
     <bookmark url="file://$PROJECT_DIR$/src/com/company/Main.java" line="54" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62f6ba68-1410-4d8d-9319-c351e6ca6899" name="Default" comment="" />
+    <list default="true" id="62f6ba68-1410-4d8d-9319-c351e6ca6899" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/public/account_username.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/public/analytics.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Databases-Project/com/company/Main.class" afterPath="$PROJECT_DIR$/out/production/Databases-Project/com/company/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Databases-Project/public/index.html" afterPath="$PROJECT_DIR$/out/production/Databases-Project/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/public/drinker.html" afterPath="$PROJECT_DIR$/src/public/drinker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/public/index.html" afterPath="$PROJECT_DIR$/src/public/index.html" />
+    </list>
     <ignored path="Databases-Project.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,13 +42,26 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            <state relative-caret-position="90">
+              <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1345#1361#0" expanded="true" />
-                <element signature="e#4793#4801#0" expanded="true" />
+                <element signature="e#1347#1363#0" expanded="true" />
+                <element signature="e#4800#4808#0" expanded="true" />
+                <element signature="e#5129#5145#0" expanded="true" />
+                <element signature="e#7540#7556#0" expanded="true" />
+                <marker date="1511470681000" expanded="false" signature="7735:7751" ph="&lt;~&gt;" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="account_username.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/public/account_username.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -47,34 +69,9 @@
       <file leaf-file-name="drinker.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/public/drinker.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            <state relative-caret-position="360">
+              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_account.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/public/create_account.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Bar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding>
-                <element signature="e#634#635#0" expanded="true" />
-                <element signature="e#668#669#0" expanded="true" />
-                <element signature="e#698#699#0" expanded="true" />
-                <element signature="e#732#733#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -82,8 +79,20 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+            <state relative-caret-position="211">
+              <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+              <folding>
+                <marker date="1511471801000" expanded="true" signature="698:923" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="analytics.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/public/analytics.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -116,8 +125,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -138,12 +147,14 @@
         <option value="$PROJECT_DIR$/src/com/company/bar.java" />
         <option value="$PROJECT_DIR$/src/com/company/Drinker.java" />
         <option value="$PROJECT_DIR$/src/public/locatebar.html" />
-        <option value="$PROJECT_DIR$/src/public/drinker.html" />
-        <option value="$PROJECT_DIR$/src/public/index.html" />
         <option value="$PROJECT_DIR$/src/public/create_account.html" />
         <option value="$PROJECT_DIR$/src/com/company/Bar.java" />
         <option value="$PROJECT_DIR$/src/com/company/SelectHelper.java" />
+        <option value="$PROJECT_DIR$/src/public/account_username.html" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/public/index.html" />
+        <option value="$PROJECT_DIR$/src/public/analytics.html" />
+        <option value="$PROJECT_DIR$/src/public/drinker.html" />
       </list>
     </option>
   </component>
@@ -624,8 +635,11 @@
           <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1345#1361#0" expanded="true" />
-            <element signature="e#4793#4801#0" expanded="true" />
+            <element signature="e#1347#1363#0" expanded="true" />
+            <element signature="e#4800#4808#0" expanded="true" />
+            <element signature="e#5129#5145#0" expanded="true" />
+            <element signature="e#7540#7556#0" expanded="true" />
+            <marker date="1511470681000" expanded="false" signature="7735:7751" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>
@@ -634,7 +648,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2580">
           <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1511471801000" expanded="true" signature="698:923" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -670,8 +686,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1345#1361#0" expanded="true" />
-            <element signature="e#4793#4801#0" expanded="true" />
+            <element signature="e#1347#1363#0" expanded="true" />
+            <element signature="e#4800#4808#0" expanded="true" />
+            <element signature="e#5129#5145#0" expanded="true" />
+            <element signature="e#7540#7556#0" expanded="true" />
+            <marker date="1511470681000" expanded="false" signature="7735:7751" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>
@@ -759,26 +778,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/public/drinker.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/public/create_account.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -814,14 +817,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/account_username.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+          <folding>
+            <marker date="1511471801000" expanded="true" signature="698:923" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/analytics.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/drinker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="90">
+          <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1345#1361#0" expanded="true" />
-            <element signature="e#4793#4801#0" expanded="true" />
+            <element signature="e#1347#1363#0" expanded="true" />
+            <element signature="e#4800#4808#0" expanded="true" />
+            <element signature="e#5129#5145#0" expanded="true" />
+            <element signature="e#7540#7556#0" expanded="true" />
+            <marker date="1511470681000" expanded="false" signature="7735:7751" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>
