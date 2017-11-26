@@ -4,7 +4,8 @@ package com.company;
  * Created by Rajvi on 11/21/17.
  */
 public class Drinker {
-    int id, age, original_gpa, current_gpa, crimes, tattoos, friends_entered, duration, time_entered, bac, friends_left;
+    int id, age, crimes, tattoos, friends_entered, friends_left;
+    float original_gpa, current_gpa, duration, time_entered, bac;
     String first_name, last_name, phone, gender, major, relationship, returned;
 
     public Drinker(int id) {
@@ -19,11 +20,11 @@ public class Drinker {
         return this.age;
     }
 
-    public int getOriginal_gpa() {
+    public float getOriginal_gpa() {
         return this.original_gpa;
     }
 
-    public int getCurrent_gpa() {
+    public float getCurrent_gpa() {
         return this.current_gpa;
     }
 
@@ -39,15 +40,15 @@ public class Drinker {
         return this.friends_entered;
     }
 
-    public int getDuration() {
+    public float getDuration() {
         return this.duration;
     }
 
-    public int getTime_entered() {
+    public float getTime_entered() {
         return this.time_entered;
     }
 
-    public int getBac() {
+    public float getBac() {
         return this.bac;
     }
 

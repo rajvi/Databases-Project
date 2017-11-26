@@ -5,7 +5,8 @@ package com.company;
  */
 public class Bar {
     String name, address, city, state, phone;
-    int rating, floors;
+    float rating;
+    int floors;
     char inspection;
 
     public Bar(String name, int rating) {
@@ -37,7 +38,7 @@ public class Bar {
         return this.floors;
     }
 
-    public int getRating() {
+    public float getRating() {
         return this.rating;
     }
 

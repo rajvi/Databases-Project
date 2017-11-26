@@ -22,6 +22,8 @@ public class Main {
      */
     public static void main(String[] args) {
         port(80);
+
+        staticFileLocation("/public");
         SelectHelper helper = new SelectHelper();
         get("/", (req, res) -> {
 //            ResultSet r = helper.select("SELECT distinct RESTAURANT FROM TripAdvisorData");
@@ -77,7 +79,7 @@ public class Main {
             String name = "";
             int age = 0;
             String major = "";
-            int gpa_difference = 0;
+            float gpa_difference = 0;
             int id = 0;
             int crimes = 0;
             String returned = "";
@@ -86,23 +88,23 @@ public class Main {
                 name = rs.getString("First Name");
                 age = rs.getInt("Age");
                 major = rs.getString("Major");
-                gpa_difference =  rs.getInt("Current GPA") - rs.getInt("Original GPA");
+                gpa_difference = rs.getFloat("Current GPA") - rs.getFloat("Original GPA");
                 id = rs.getInt("ID");
                 crimes = rs.getInt("Crimes");
                 returned = rs.getString("Returned Safely?");
             }
 
-            String message;
-            if((gpa_difference <= 0.5 && returned == "NO") || (crimes > 3 && returned == "NO"))
+            String message = "";
+            if(gpa_difference > 0 && returned.equals("YES") && crimes == 0)
+                message = "Keep it up!";
+            else if((gpa_difference <= 0.5 && returned.equals("NO")) || (crimes > 3 && returned.equals("NO")))
                 message = "Extreme Danger";
             else if(gpa_difference <= 0.5 || crimes > 0)
                 message = "Danger";
-            else if(gpa_difference < 0.4 || returned == "NO" || crimes > 0)
+            else if(gpa_difference < 0 || returned.equals("NO") || crimes > 0)
                 message = "Possibility of Danger";
-            else if((gpa_difference > 0 && gpa_difference<=0.2) && returned == "YES" && crimes == 0)
+            else if(gpa_difference >= 0 || returned.equals("YES") || crimes== 0)
                 message = "You are stable";
-            else if(gpa_difference >= 0 && returned == "YES" && crimes == 0)
-                message = "Keep it up!";
             else
                 message = "Ok";
 
@@ -111,16 +113,28 @@ public class Main {
             model.put("major", major);
             model.put("gpa_difference", gpa_difference);
             model.put("id", id);
+            model.put("crimes", crimes);
             model.put("status", message);
-
+            System.out.println("REACHED");
             //String id = request.queryParams("username");
+
             String frequented_bars = "SELECT `bar name` FROM frequents WHERE `drinker id`= " + "'" + user + "'";
             ResultSet rs2 = helper.select(frequented_bars);
-            ArrayList<String> bars = new ArrayList<String>();
+            ArrayList<String> bars = new ArrayList<>();
             while(rs2.next()) {
                 bars.add(rs2.getString("bar name"));
             }
             model.put("bars", bars);
+
+//            String recommend_beers = "SELECT distinct s.beer as Beer FROM frequents f, likes l, sells s WHERE f.`bar name` = s.bar AND s.beer = l.beer AND f.`drinker id` = " + "'" + user + "'" + " AND l.`drinker id`= " + "'" + user + "'";
+//            System.out.println(recommend_beers);
+//            ResultSet rs3 = helper.select(recommend_beers);
+//            ArrayList<Beer> beers_liked = new ArrayList<>();
+//            while(rs3.next()) {
+//                beers_liked.add(new Beer(rs3.getString("Brand")));
+//            }
+//
+//            model.put("beers",beers_liked);
 
             return render(model,"/public/drinker.html");
         });
@@ -172,12 +186,6 @@ public class Main {
             return render(model,"/public/account_username.html");
 
         });
-
-//        post("/analytics",(request, response) -> {
-//            HashMap<String,Object> model = new HashMap<String, Object>();
-//            return render(model,"/public/analytics.html");
-//
-//        });
 
         get("/analytics", (req, res) -> {
             HashMap<String,Object> model = new HashMap<String, Object>();
