@@ -9,7 +9,11 @@
     <bookmark url="file://$PROJECT_DIR$/src/com/company/Main.java" line="56" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62f6ba68-1410-4d8d-9319-c351e6ca6899" name="Default" comment="" />
+    <list default="true" id="62f6ba68-1410-4d8d-9319-c351e6ca6899" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Databases-Project/public/analytics.html" afterPath="$PROJECT_DIR$/out/production/Databases-Project/public/analytics.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/public/analytics.html" afterPath="$PROJECT_DIR$/src/public/analytics.html" />
+    </list>
     <ignored path="Databases-Project.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,12 +41,12 @@
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6055#6071#0" expanded="true" />
                 <element signature="e#8041#8057#0" expanded="true" />
-                <marker date="1511716466000" expanded="false" signature="8236:8252" ph="&lt;~&gt;" />
+                <marker date="1511729146000" expanded="false" signature="8236:8252" ph="&lt;~&gt;" />
               </folding>
             </state>
           </provider>
@@ -73,8 +77,8 @@
       <file leaf-file-name="analytics.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/public/analytics.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+            <state relative-caret-position="156">
+              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -237,6 +241,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Databases-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Databases-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -621,7 +647,7 @@
             <element signature="imports" expanded="true" />
             <element signature="e#6055#6071#0" expanded="true" />
             <element signature="e#8041#8057#0" expanded="true" />
-            <marker date="1511716466000" expanded="false" signature="8236:8252" ph="&lt;~&gt;" />
+            <marker date="1511729146000" expanded="false" signature="8236:8252" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>
@@ -689,7 +715,7 @@
             <element signature="imports" expanded="true" />
             <element signature="e#6055#6071#0" expanded="true" />
             <element signature="e#8041#8057#0" expanded="true" />
-            <marker date="1511716466000" expanded="false" signature="8236:8252" ph="&lt;~&gt;" />
+            <marker date="1511729146000" expanded="false" signature="8236:8252" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>
@@ -724,7 +750,7 @@
             <element signature="imports" expanded="true" />
             <element signature="e#6055#6071#0" expanded="true" />
             <element signature="e#8041#8057#0" expanded="true" />
-            <marker date="1511716466000" expanded="false" signature="8236:8252" ph="&lt;~&gt;" />
+            <marker date="1511729146000" expanded="false" signature="8236:8252" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>
@@ -808,14 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/public/drinker.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
@@ -826,10 +844,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/drinker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/public/analytics.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+        <state relative-caret-position="156">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -837,12 +863,12 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6055#6071#0" expanded="true" />
             <element signature="e#8041#8057#0" expanded="true" />
-            <marker date="1511716466000" expanded="false" signature="8236:8252" ph="&lt;~&gt;" />
+            <marker date="1511729146000" expanded="false" signature="8236:8252" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>
