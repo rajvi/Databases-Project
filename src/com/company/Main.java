@@ -150,19 +150,26 @@ public class Main {
             HashMap<String,Object> model = new HashMap<String, Object>();
             String first_name = request.queryParams("first_name");
             String last_name = request.queryParams("last_name");
-            String phone = request.queryParams("phone");
-            String gender = request.queryParams("gender");
+//            String phone = request.queryParams("phone");
+//            String gender = request.queryParams("gender");
+            String phone = "";
+            String gender = "";
 
             String age = request.queryParams("age");
             String major = request.queryParams("major");
             String original_gpa = request.queryParams("original_gpa");
             String current_gpa = request.queryParams("current_gpa");
-            String relationship = request.queryParams("relationship");
+//            String relationship = request.queryParams("relationship");
+            String relationship = "";
             String crimes = request.queryParams("crimes");
-            String tattoos = request.queryParams("tattoos");
-            String friends_entered = request.queryParams("friends_entered");
-            String duration = request.queryParams("duration");
-            String time_entered = request.queryParams("time_entered");
+//            String tattoos = request.queryParams("tattoos");
+//            String friends_entered = request.queryParams("friends_entered");
+            String tattoos = "";
+            String friends_entered = "";
+//            String duration = request.queryParams("duration");
+//            String time_entered = request.queryParams("time_entered");
+            String duration = "";
+            String time_entered = "";
             String bac = request.queryParams("bac");
             String friends_left = request.queryParams("friends_left");
 
@@ -195,7 +202,7 @@ public class Main {
 //            String city = request.queryParams("location");
 //            System.out.println(city);
             HashMap<String, Object> model = new HashMap<String, Object>();
-            String query1 = "SELECT drinkers.`Average BAC %` as BAC, (drinkers.`Current GPA` - drinkers.`Original GPA`) as GPA FROM drinkers";
+            String query1 = "SELECT drinkers.`Average BAC %` as BAC, (drinkers.`Current GPA` - drinkers.`Original GPA`) as GPA FROM drinkers ORDER BY BAC ASC";
             System.out.println(query1);
             ResultSet rs = helper.select(query1);
             List<Float> x_data = new ArrayList<Float>();
