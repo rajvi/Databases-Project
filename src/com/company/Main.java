@@ -10,8 +10,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.zip.Inflater;
 
 import static spark.Spark.*;
 
@@ -184,9 +186,37 @@ public class Main {
             return render(model,"/public/account_username.html");
         });
 
-        get("/analytics", (req, res) -> {
-            HashMap<String,Object> model = new HashMap<String, Object>();
+//        get("/analytics", (req, res) -> {
+//            HashMap<String,Object> model = new HashMap<String, Object>();
+//            return render(model,"/public/analytics.html");
+//        });
+
+        post("/analytics", (request, response) -> {
+//            String city = request.queryParams("location");
+//            System.out.println(city);
+            HashMap<String, Object> model = new HashMap<String, Object>();
+            String query1 = "SELECT drinkers.`Average BAC %` as BAC, (drinkers.`Current GPA` - drinkers.`Original GPA`) as GPA_difference";
+            System.out.println(query1);
+            ResultSet rs = helper.select(query1);
+            List<Float> x_data = new ArrayList<Float>();
+            while(rs.next()) {
+                x_data.add(rs.getFloat("BAC"));
+            }
+            Float[] x_arr = new Float[x_data.size()];
+            x_arr = x_data.toArray(x_arr);
+            System.out.println(x_arr);
+            model.put("x", x_arr);
+
+            List<Float> y_data = new ArrayList<Float>();
+            while(rs.next()) {
+                y_data.add(rs.getFloat("GPA_difference"));
+            }
+            Float[] y_arr = new Float[y_data.size()];
+            y_arr = y_data.toArray(y_arr);
+            model.put("y", y_arr);
+
             return render(model,"/public/analytics.html");
+
         });
 
         get("/patterns", (req, res) -> {
