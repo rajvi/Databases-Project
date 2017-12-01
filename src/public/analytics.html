@@ -54,9 +54,9 @@ li a:hover:not(.active) {
     new Chart(document.getElementById("line-chart"), {
   type: 'line',
   data: {
-    labels: [1500,1600],
+    labels: $x,
     datasets: [{
-        data: [86,114],
+        data: $y,
         label: "drinkers",
         borderColor: "#3e95cd",
         fill: false
