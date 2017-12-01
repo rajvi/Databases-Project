@@ -23,7 +23,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //port(80);
+        port(80);
 
         staticFileLocation("/public");
         SelectHelper helper = new SelectHelper();
