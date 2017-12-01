@@ -53,31 +53,110 @@ li a:hover:not(.active) {
 <ul>
     <li><a class="active" href="/">Home</a></li>
     <li><a href="/analytics">Analytics</a></li>
+    <li><a href="/patterns">Patterns</a></li>
     <!--<li><a href="#contact">Contact</a></li>-->
     <!--<li style="float:right"><a href="#about">About</a></li>-->
+
 </ul>
 
 <br><br>
 <center><h1> <font face="verdana" color="green">My Drinking Class Has A Databases Problem</font></h1></center>
 <br><br>
-<h2>Find bars that have a good influence</h2>
+<center><h2>Find bars that have a good influence</h2></center>
 
-<form action="/locatebar", method="POST">
+<center><form action="/locatebar", method="POST">
     Enter Location (city):
     <br>
-    <input type="text" name="location" value="">
+    <select name="location">
+        <option value="Abilene">Abilene</option>
+        <option value="Akron">Akron</option>
+        <option value="Albany">Albany</option>
+        <option value="Albuquerque">Albuquerque</option>
+        <option value="Alexandria">Alexandria</option>
+        <option value="Alhambra">Alhambra</option>
+        <option value="Allen">Allen</option>
+        <option value="Allentown">Allentown</option>
+        <option value="Amarillo">Amarillo</option>
+        <option value="Ames">Ames</option>
+        <option value="Anaheim">Anaheim</option>
+        <option value="Anchorage">Anchorage</option>
+        <option value="Anderson">Anderson</option>
+        <option value="Ann Arbor">Ann Arbor</option>
+        <option value="Antioch">Antioch</option>
+        <option value="Atlanta">Atlanta</option>
+        <option value="Auburn">Auburn</option>
+        <option value="Austin">Austin</option>
+        <option value="Baltimore">Baltimore</option>
+        <option value="Berkeley">Berkeley</option>
+        <option value="Bloomington">Bloomington</option>
+        <option value="Boston">Boston</option>
+        <option value="Cambridge">Cambridge</option>
+        <option value="Camden">Camden</option>
+        <option value="Charleston">Charleston</option>
+        <option value="Chicago">Chicago</option>
+        <option value="Cincinnati">Cincinnati</option>
+        <option value="Compton">Compton</option>
+        <option value="Concord">Concord</option>
+        <option value="Dallas">Dallas</option>
+        <option value="Daytona Beach">Daytona Beach</option>
+        <option value="Dearborn">Dearborn</option>
+        <option value="Denver">Denver</option>
+        <option value="Detroit">Detroit</option>
+        <option value="Durham">Durham</option>
+        <option value="Fargo">Fargo</option>
+        <option value="Fullerton">Fullerton</option>
+        <option value="Hollywood">Hollywood</option>
+        <option value="Indianapolis">Indianapolis</option>
+        <option value="Irvine">Irvine</option>
+        <option value="Jersey City">Jersey City</option>
+        <option value="Lexington">Lexington</option>
+        <option value="Manhattan">Manhattan</option>
+        <option value="Minneapolis">Minneapolis</option>
+        <option value="New Brunswick">New Brunswick</option>
+        <option value="New York">New York</option>
+        <option value="Niagara Falls">Niagara Falls</option>
+        <option value="Oakland">Oakland</option>
+        <option value="Ontario">Ontario</option>
+        <option value="Sacramento">Sacramento</option>
+        <option value="Salt Lake City">Salt Lake City</option>
+        <option value="San Francisco">San Francisco</option>
+        <option value="San Jose">San Jose</option>
+        <option value="Santa Fe">Santa Fe</option>
+        <option value="Tacoma">Tacoma</option>
+        <option value="Vancouver">Vancouver</option>
+        <option value="Washington">Washington</option>
+
+
+    </select>
+
+    <!--Text Box: -->
+    <!--<input type="text" name="location" value="">-->
     <br>
     <input type="submit" value="Submit">
-</form>
+</form></center>
+
+
+<!--<center><form action="/locatebar", method="POST">-->
+    <!--<select name="cars">-->
+        <!--<option value="volvo">Volvo</option>-->
+        <!--<option value="saab">Saab</option>-->
+        <!--<option value="fiat">Fiat</option>-->
+        <!--<option value="audi">Audi</option>-->
+    <!--</select>-->
+    <!--<br><br>-->
+    <!--<input type="submit">-->
+<!--</form></center>-->
+
+
 
 <!--Bars Search Engine-->
 
 <!--User Profile-->
 <br><br>
-Log-in to View Profile:
+<center>Log-in to View Profile:</center>
 <br><br>
 
-<form action="/drinker", method="POST">
+<center><form action="/drinker", method="POST">
     Drinker
     <br>
     Username:
@@ -85,12 +164,12 @@ Log-in to View Profile:
     <input type="text" name="username" value="">
     <br>
     <input type="submit" value="Drinker">
-</form>
+</form></center>
 <br><br>
-<form action="/create_account", method="POST">
+<center><form action="/create_account", method="POST">
     Or
     <input type="submit" value="Create an account">
-</form>
+</form></center>
 
 <br><br>
 <!--<form action="/bar", method="POST">-->

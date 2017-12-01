@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -42,26 +43,53 @@ li a:hover:not(.active) {
 <ul>
     <li><a href="/">Home</a></li>
     <li><a class = "active" href="/analytics">Analytics</a></li>
+    <li><a href="/patterns">Patterns</a></li>
     <!--<li><a href="#contact">Contact</a></li>-->
     <!--<li style="float:right"><a href="#about">About</a></li>-->
 </ul>
 <br><br>
-<div>
-    Generally, students with higher intoxication levels, have lower GPAs
-    <br>
-    <img src="images/image1.png" height="50%" width="50%">
-    <br><br><br>
-    Students with higher intoxication levels, have higher rates of depression and do not return home safely
-    <br>
-    <img src="images/Rplot2.png" height="50%" width="50%">
-    <br><br><br>
-    Bars with a higher health inspection grade have more drugs dealt there
-    <br>
-    <img src="images/Rplot3.png" height="50%" width="50%">
-    <br><br><br>
-    Students do not return safely when they leave bars alone
-    <br>
-    <img src="images/Rplot4.png" height="50%" width="50%">
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+<br><br>
+
 </body>
 </html>

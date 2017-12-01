@@ -21,7 +21,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        port(80);
+        //port(80);
 
         staticFileLocation("/public");
         SelectHelper helper = new SelectHelper();
@@ -142,11 +142,9 @@ public class Main {
         post("/create_account",(request, response) -> {
             HashMap<String,Object> model = new HashMap<String, Object>();
             return render(model,"/public/create_account.html");
-
         });
 
         post("/create_account_success",(request, response) -> {
-
             HashMap<String,Object> model = new HashMap<String, Object>();
             String first_name = request.queryParams("first_name");
             String last_name = request.queryParams("last_name");
@@ -184,12 +182,16 @@ public class Main {
             //response.redirect("/");
             //return "";
             return render(model,"/public/account_username.html");
-
         });
 
         get("/analytics", (req, res) -> {
             HashMap<String,Object> model = new HashMap<String, Object>();
             return render(model,"/public/analytics.html");
+        });
+
+        get("/patterns", (req, res) -> {
+            HashMap<String,Object> model = new HashMap<String, Object>();
+            return render(model,"/public/patterns.html");
         });
 
 //        post("/bar",(request, response) -> {
