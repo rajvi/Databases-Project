@@ -48,21 +48,7 @@ li a:hover:not(.active) {
     <!--<li style="float:right"><a href="#about">About</a></li>-->
 </ul>
 <br><br>
-View Graphs of Intoxication Level Compared to Other Variables:
-<center><form action="/analytics", method="POST">
-    Select a variable to compare against intoxication level:
-    <br>
-    <select name="compare_to_bac">
-        <option value="gpa_change">GPA Change</option>
-        <option value="crimes">Crimes</option>
-        <option value="depression">Depression</option>
-        <option value="tattoos">Number of Tattoos</option>
 
-    </select>
-
-    <br><br>
-    <input type="submit" value="Submit">
-</form></center>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
 <canvas id="line-chart" width="800" height="450"></canvas>
 <script>

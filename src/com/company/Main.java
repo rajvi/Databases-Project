@@ -202,14 +202,44 @@ public class Main {
 //            String city = request.queryParams("location");
 //            System.out.println(city);
             HashMap<String, Object> model = new HashMap<String, Object>();
-            String query1 = "SELECT drinkers.`Average BAC %` as BAC, (drinkers.`Current GPA` - drinkers.`Original GPA`) as GPA FROM drinkers ORDER BY BAC ASC";
+
+            return render(model,"/public/analytics.html");
+
+        });
+
+        post("/analytics", (request, response) -> {
+            String y_var = request.queryParams("compare_to_bac");
+            String y_label = y_var;
+            if(y_var.equals("gpa_change")) {
+                y_var = "(drinkers.`Current GPA` - drinkers.`Original GPA`)";
+                y_label = "GPA Change";
+            }
+            else if(y_var.equals("crimes")) {
+                y_var = "drinkers.crimes";
+                y_label = "Crimes";
+            }
+
+            else if(y_var.equals("depression")) {
+                y_var = "drinkers.depression";
+                y_label = "Depression";
+            }
+
+            else if(y_var.equals("tattoos")) {
+                y_var = "drinkers.Tattoos";
+                y_label = "Duration";
+            }
+
+            System.out.println(y_var);
+            HashMap<String, Object> model = new HashMap<String, Object>();
+            model.put("y_label", y_label);
+            String query1 = "SELECT drinkers.`Average BAC %` as BAC, " + y_var + " as dynamic_y FROM drinkers ORDER BY BAC ASC";
             System.out.println(query1);
             ResultSet rs = helper.select(query1);
             List<Float> x_data = new ArrayList<Float>();
             List<Float> y_data = new ArrayList<Float>();
             while(rs.next()) {
                 x_data.add(rs.getFloat("BAC"));
-                y_data.add(rs.getFloat("GPA"));
+                y_data.add(rs.getFloat("dynamic_y"));
             }
             Float[] x_arr = new Float[x_data.size()];
             x_arr = x_data.toArray(x_arr);
@@ -218,15 +248,14 @@ public class Main {
 
 
             while(rs.next()) {
-                System.out.println("psu");
-                System.out.println(rs.getString("GPA"));
-                y_data.add(rs.getFloat("GPA"));
+                System.out.println(rs.getString("dynamic_y"));
+                y_data.add(rs.getFloat("dynamic_y"));
             }
             Float[] y_arr = new Float[y_data.size()];
             y_arr = y_data.toArray(y_arr);
             model.put("y", y_data);
 
-            return render(model,"/public/analytics.html");
+            return render(model,"/public/graphs.html");
 
         });
 

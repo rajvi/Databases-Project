@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <script>
+    function validateForm() {
+    var fn = document.forms["myForm"]["first_name"].value;
+    var ln = document.forms["myForm"]["last_name"].value;
+    var age = document.forms["myForm"]["age"].value;
+    var og = document.forms["myForm"]["major"].value;
+    var cg = document.forms["myForm"]["original_gpa"].value;
+    var ln = document.forms["myForm"]["current_gpa"].value;
+    var c = document.forms["myForm"]["crimes"].value;
+    var bc = document.forms["myForm"]["bac"].value;
+    var fl = document.forms["myForm"]["friends_left"].value;
+    var r = document.forms["myForm"]["returned"].value;
+    if (fn == "" || ln == "" || age == "" || major == "" || og == "" || cg == "" || c == "" || bc == "" || fl == "" || r == "") {
+        alert("All fields must be filled out");
+        return false;
+    }
+}
+</script>
 </head>
 <body bgcolor="#E6E6FA">
-<form action="/create_account_success", method="POST">
+<form name="myForm" action="/create_account_success" onsubmit="return validateForm()" method="POST">
+    Please fill out all the fields
+    <br><br>
     First Name:
     <input type="text" name="first_name" value="">
     <br><br>
